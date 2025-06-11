@@ -65,7 +65,7 @@ def game_scene() -> None:
             elif a_button == constants.button_state["buttom_just_pressed"]:
                 a_button = constants.button_state["button_still_pressed"]
         else:
-            if a_button == constants.button_state["buton_still_pressed"]:
+            if a_button == constants.button_state["button_still_pressed"]:
                 a_button = constants.button_state["button_released"]
             else:
                 a_button = constants.button_state["button_up"]
@@ -76,7 +76,7 @@ def game_scene() -> None:
             elif b_button == constants.button_state["buttom_just_pressed"]:
                 b_button = constants.button_state["button_still_pressed"]
         else:
-            if b_button == constants.button_state["buton_still_pressed"]:
+            if b_button == constants.button_state["button_still_pressed"]:
                 b_button = constants.button_state["button_released"]
             else:
                 b_button = constants.button_state["button_up"]
@@ -100,7 +100,7 @@ def game_scene() -> None:
             ship.move(ship.x, ship.y + 1)
         # update logic
         # play sound if A was just button_just_pressed
-        if a_button == constants.button_state["buton_just_pressed"]:
+        if a_button == constants.button_state["button_just_pressed"]:
             sound.play(pew_sound)
 
         # redraw Sprite

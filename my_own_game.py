@@ -1,3 +1,4 @@
+# 컨셉: 건물 틀어막는 디펜스 게임
 #!/usr/bin/env python 3
 
 """
@@ -115,7 +116,7 @@ def menu_scene():
 def game_scene() -> None:
     """This function is the main game game_scene"""
 
-    def show_alien():
+    def show_zombie():
         """This function takes an alien from off screen and moces it on screen"""
         for alien_number in range(len(aliens)):
             if aliens[alien_number].x < 0:
@@ -178,7 +179,7 @@ def game_scene() -> None:
             a_single_alien = stage.Sprite(image_bank_sprites, 9, constants.OFF_SCREEN_X, constants.OFF_SCREEN_Y)
             aliens.append(a_single_alien)
         # place 1 alien on he screen
-    show_alien()
+    show_zombie()
     # create a stage for the background to show up on
     #  and set the frame rate to 60fps
     game = stage.Stage(ugame.display, 60)
@@ -250,7 +251,7 @@ def game_scene() -> None:
                 aliens[alien_number].move(aliens[alien_number].x, aliens[alien_number].y + constants.ALIEN_SPEED)
                 if aliens[alien_number].y > constants.SCREEN_Y:
                     aliens[alien_number].move(constants.OFF_SCREEN_X, constants.OFF_SCREEN_Y)
-                    show_alien()
+                    show_zombie()
                     score -= 1
                     score_text.clear()
                     score_text.cursor(0,0)
@@ -282,8 +283,7 @@ def game_scene() -> None:
                             score_text.text("Score: {0}.".format(score))
                             sound.stop()
                             sound.play(boom_sound)
-                            show_alien()
-                            show_alien()
+                            show_zombie()
                             score = score + 1
 
         for alien_number in range(len(aliens)):
